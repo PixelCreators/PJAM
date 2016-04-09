@@ -10,5 +10,6 @@ public class SwitchToPlayer : MonoBehaviour
     public void Switch()
     {
         Instantiate(Player, SpawnPoint, Quaternion.Euler(Rotation));
+
     }
 }

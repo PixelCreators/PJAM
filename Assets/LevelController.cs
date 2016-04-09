@@ -12,7 +12,8 @@ public class LevelController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         other.GetComponentInChildren<MainCamera>().gameObject.SetActive(false);
-        var cutscene = other.GetComponentInChildren<CutSceneController>();
+        var cutscene = other.GetComponent<AnimationController>()._cutSceneController;
+        cutscene.gameObject.SetActive(true);
         cutscene.NextLevelName = NextLevelName;
         cutscene.PlayLoadLevelAnim();
         

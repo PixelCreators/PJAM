@@ -3,7 +3,7 @@ using System.Collections;
 
 public class AnimationController : MonoBehaviour
 {
-
+    public CutSceneController _cutSceneController;
     private Animator cutsceneAnimator;
 
     public void Awake()
