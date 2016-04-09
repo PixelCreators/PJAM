@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class CutSceneController : MonoBehaviour
 {
-
+    public string NextLevelName;
     private Animator _animator;
 
 	// Use this for initialization
@@ -22,9 +22,14 @@ public class CutSceneController : MonoBehaviour
     {
     }
 
-    public void LoadNewLevel(string NextLevelName)
+    public void LoadNewLevel()
     {
         SceneManager.LoadScene(NextLevelName);
+    }
+
+    public void ResetLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 

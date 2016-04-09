@@ -13,6 +13,8 @@ public class LevelController : MonoBehaviour
     {
         other.GetComponentInChildren<MainCamera>().gameObject.SetActive(false);
         var cutscene = other.GetComponentInChildren<CutSceneController>();
+        cutscene.NextLevelName = NextLevelName;
         cutscene.PlayLoadLevelAnim();
+        
     }   
 }
