@@ -12,6 +12,7 @@ public class ScreenFadeInOut : MonoBehaviour
 
     void Awake()
     {
+        image = FindObjectOfType<FadeImage>().gameObject.GetComponent<RawImage>();
         //image.color = Color.clear;
         //image.enabled = false;
         //Debug.Log(image.color.a);
@@ -71,6 +72,11 @@ public class ScreenFadeInOut : MonoBehaviour
         yield return null;
     }
 
+    public void FadeBlack()
+    {
+        image.enabled = true;
+        StartCoroutine(FadeToBlack());
+    }
 
     IEnumerator FadeOut()
     {
