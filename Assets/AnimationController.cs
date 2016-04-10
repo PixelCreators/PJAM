@@ -5,10 +5,12 @@ public class AnimationController : MonoBehaviour
 {
     public CutSceneController _cutSceneController;
     private Animator cutsceneAnimator;
+    private Animator mainCameraAnimator;
 
     public void Awake()
     {
         cutsceneAnimator = GetComponentInChildren<Animator>();
+        mainCameraAnimator = GetComponent<Animator>();
     }
 
     public void Switch()
@@ -22,6 +24,12 @@ public class AnimationController : MonoBehaviour
         cutsceneAnimator = GetComponentInChildren<Animator>();
         if (cutsceneAnimator != null)
             cutsceneAnimator.Play("Die");
+    }
+
+    public void PlayStart()
+    {
+        if(mainCameraAnimator != null)
+            mainCameraAnimator.Play("WakeUp");
     }
     
 }

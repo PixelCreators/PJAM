@@ -29,11 +29,7 @@ public class ScreenFadeInOut : MonoBehaviour
         StartCoroutine(FadeOut());
     }
 
-    public void Update()
-    {
-        if(GamePad.GetButtonDown(GamePad.Button.A, GamePad.Index.One))
-            FadeOutIn();
-    }
+  
 
     IEnumerator FadeToClear()
     {
