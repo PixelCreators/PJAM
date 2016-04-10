@@ -10,6 +10,7 @@ public class TextAutomateCompletion : MonoBehaviour
     public bool isBegginingText;
     private bool _waitNow;
     public bool StartigScene;
+    private bool justOnce = false;
 
     //Store all your text in this string array
     public string[] goatText = new string[] { "One night with Alice...", "Not a VR Experience", "Alice is a little girl. She'd just turned 7.", "She had a lot of cake and soda before sleep.", "She also went to bed very late. Alice is very, very naughty!", "Let's hope she'll have nightmares!", "CHAPTER I: \"Is it my bedroom?\"" };
@@ -51,8 +52,8 @@ public class TextAutomateCompletion : MonoBehaviour
         {
             if(currentlyDisplayingText + 1 >= goatText.Length && StartigScene)
                 SceneManager.LoadScene("Level");
-            else
-                SkipToNextText();
+            //else
+                //SkipToNextText();
         }
     }
 
@@ -63,7 +64,11 @@ public class TextAutomateCompletion : MonoBehaviour
         {
             if (isBegginingText)
             {
-                transform.parent.parent.GetComponentInChildren<AnimationController>().PlayStart();
+                if (!justOnce)
+                {
+                    transform.parent.parent.GetComponentInChildren<AnimationController>().PlayStart();
+                    justOnce = true;
+                }
             }
             _waitNow = true;
             return;
