@@ -18,7 +18,7 @@ public class SupeshotController : MonoBehaviour
         if(!_superhotMode)
             return;
 
-        Debug.Log("Hello 2");
+
         if (GamePad.GetAxis(GamePad.Axis.LeftStick, GamePad.Index.Any).x > 0 ||
              GamePad.GetAxis(GamePad.Axis.LeftStick, GamePad.Index.Any).y > 0 ||
              GamePad.GetAxis(GamePad.Axis.RightStick, GamePad.Index.Any).x > 0 ||

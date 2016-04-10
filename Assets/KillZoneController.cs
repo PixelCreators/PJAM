@@ -7,7 +7,9 @@ public class KillZoneController : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<AnimationController>().PlayDie();
+            var anim = other.GetComponent<AnimationController>();
+            anim._cutSceneController.gameObject.SetActive(true);
+            anim.PlayDie();
         }
     }
 }

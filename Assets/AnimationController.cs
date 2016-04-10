@@ -19,7 +19,8 @@ public class AnimationController : MonoBehaviour
 
     public void PlayDie()
     {
-        if(cutsceneAnimator != null)
+        cutsceneAnimator = GetComponentInChildren<Animator>();
+        if (cutsceneAnimator != null)
             cutsceneAnimator.Play("Die");
     }
     

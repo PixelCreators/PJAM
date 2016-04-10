@@ -29,6 +29,7 @@ public class CutSceneController : MonoBehaviour
 
     public void ResetLevel()
     {
+        Debug.Log("Haha");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
